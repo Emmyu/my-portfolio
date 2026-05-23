@@ -122,8 +122,16 @@ const App = () => (
 <div class="container">
 <div class="reveal"><span class="section-label">Featured Work</span></div>
 <h2 class="section-title reveal">Production Applications</h2>
-<p class="section-subtitle reveal">Real-world apps shipped to millions of users across app stores.</p>
-<div class="projects-grid">
+<p class="section-subtitle reveal">Real-world apps and websites shipped to users worldwide.</p>
+
+<!-- Tab toggles -->
+<div class="project-tabs reveal">
+<button class="project-tab active" data-tab="mobile">📱 Mobile Apps</button>
+<button class="project-tab" data-tab="web">🌐 Web Projects</button>
+</div>
+
+<!-- MOBILE PROJECTS -->
+<div class="projects-grid project-panel active" id="panel-mobile">
 
 <div class="project-card reveal">
 <div class="project-screenshots">
@@ -226,6 +234,112 @@ const App = () => (
 </div>
 
 </div>
+
+<!-- WEB PROJECTS -->
+<div class="projects-grid web-projects-grid project-panel" id="panel-web">
+
+<div class="project-card web-card reveal">
+<div class="project-screenshots web-screenshot">
+<img src="assets/images/bluespring_mockup1.png" alt="BlueSpring Cleaning" class="active">
+<img src="assets/images/bluespring_mockup2.png" alt="BlueSpring Cleaning Full">
+<div class="screenshot-toggle"><button class="active"></button><button></button></div>
+</div>
+<div class="project-info">
+<span class="project-category">Cleaning Services</span>
+<h3>BlueSpring Cleaning</h3>
+<p>Professional house cleaning service website with booking system, service area coverage, and blog.</p>
+<div class="project-links">
+<a href="#" class="store-badge">🌐 Visit Site</a>
+</div>
+</div>
+</div>
+
+<div class="project-card web-card reveal">
+<div class="project-screenshots web-screenshot">
+<img src="assets/images/web_moooi.png" alt="Moooi" class="active">
+</div>
+<div class="project-info">
+<span class="project-category">E-Commerce / Luxury</span>
+<h3>Moooi</h3>
+<p>Premium Dutch design brand e-commerce platform showcasing luxury furniture and lighting collections.</p>
+<div class="project-links">
+<a href="https://www.moooi.com/en" target="_blank" class="store-badge">🌐 Visit Site</a>
+</div>
+</div>
+</div>
+
+<div class="project-card web-card reveal">
+<div class="project-screenshots web-screenshot">
+<img src="assets/images/web_aspirehr.png" alt="Aspire HR" class="active">
+</div>
+<div class="project-info">
+<span class="project-category">HR / SaaS</span>
+<h3>Aspire HR</h3>
+<p>Human resources management platform streamlining recruitment, onboarding, and employee engagement.</p>
+<div class="project-links">
+<a href="https://aspire-hr.com/" target="_blank" class="store-badge">🌐 Visit Site</a>
+</div>
+</div>
+</div>
+
+<div class="project-card web-card reveal">
+<div class="project-screenshots web-screenshot">
+<img src="assets/images/web_casangelina.png" alt="Casa Angelina" class="active">
+</div>
+<div class="project-info">
+<span class="project-category">Hospitality</span>
+<h3>Casa Angelina</h3>
+<p>Luxury boutique hotel website on the Amalfi Coast featuring elegant booking experience and visual storytelling.</p>
+<div class="project-links">
+<a href="https://www.casangelina.com/" target="_blank" class="store-badge">🌐 Visit Site</a>
+</div>
+</div>
+</div>
+
+<div class="project-card web-card reveal">
+<div class="project-screenshots web-screenshot">
+<img src="assets/images/web_minddoc.png" alt="MindDoc" class="active">
+</div>
+<div class="project-info">
+<span class="project-category">Mental Health</span>
+<h3>MindDoc</h3>
+<p>Digital mental health platform providing mood tracking, therapy resources, and professional support tools.</p>
+<div class="project-links">
+<a href="https://minddoc.com/us/en" target="_blank" class="store-badge">🌐 Visit Site</a>
+</div>
+</div>
+</div>
+
+<div class="project-card web-card reveal">
+<div class="project-screenshots web-screenshot">
+<img src="assets/images/web_snamitravel.png" alt="Snami Travel" class="active">
+</div>
+<div class="project-info">
+<span class="project-category">Travel</span>
+<h3>Snami Travel</h3>
+<p>Premium travel agency website with curated destination packages and seamless booking workflows.</p>
+<div class="project-links">
+<a href="https://www.snamitravel.com/" target="_blank" class="store-badge">🌐 Visit Site</a>
+</div>
+</div>
+</div>
+
+<div class="project-card web-card reveal">
+<div class="project-screenshots web-screenshot">
+<img src="assets/images/web_niraalpina.png" alt="Nira Alpina" class="active">
+</div>
+<div class="project-info">
+<span class="project-category">Hospitality</span>
+<h3>Nira Alpina</h3>
+<p>Swiss alpine luxury hotel website with immersive visual design and integrated reservation system.</p>
+<div class="project-links">
+<a href="https://www.niraalpina.com/" target="_blank" class="store-badge">🌐 Visit Site</a>
+</div>
+</div>
+</div>
+
+</div>
+
 </div>
 </section>
 

@@ -38,6 +38,16 @@ const timelineObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.2, rootMargin: '0px 0px -30px 0px' });
 timelineItems.forEach(item => timelineObserver.observe(item));
 
+// ─── Project tabs ───
+document.querySelectorAll('.project-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.project-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.project-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
 // ─── Project screenshot toggles ───
 document.querySelectorAll('.project-card').forEach(card => {
   const imgs = card.querySelectorAll('.project-screenshots img');
