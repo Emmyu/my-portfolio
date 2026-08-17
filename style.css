@@ -3,27 +3,27 @@
 :root,
 [data-theme="light"] {
   color-scheme: light;
-  --paper: #f3efe6;
-  --paper-2: #e8e2d4;
-  --ink: #1a1714;
-  --ink-soft: #3f3a34;
-  --muted: #6f6a63;
-  --line: rgba(26, 23, 20, 0.12);
-  --line-strong: rgba(26, 23, 20, 0.22);
+  --paper: #ffffff;
+  --paper-2: #f5f5f5;
+  --ink: #111111;
+  --ink-soft: #3f3f46;
+  --muted: #71717a;
+  --line: rgba(17, 17, 17, 0.1);
+  --line-strong: rgba(17, 17, 17, 0.2);
   --accent: #b44a28;
   --accent-hover: #8f3a1e;
-  --surface: #faf7f0;
-  --nav-bg: rgba(243, 239, 230, 0.9);
-  --nav-bg-scrolled: rgba(243, 239, 230, 0.96);
-  --hero-glow-1: rgba(180, 74, 40, 0.2);
-  --hero-glow-2: rgba(196, 154, 82, 0.14);
-  --hero-glow-3: rgba(243, 239, 230, 0.55);
-  --footer-bg: #1a1714;
-  --footer-text: #f3efe6;
-  --footer-muted: rgba(243, 239, 230, 0.55);
-  --footer-line: rgba(243, 239, 230, 0.15);
+  --surface: #ffffff;
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  --nav-bg-scrolled: rgba(255, 255, 255, 0.96);
+  --hero-glow-1: rgba(180, 74, 40, 0.12);
+  --hero-glow-2: rgba(180, 74, 40, 0.06);
+  --hero-glow-3: rgba(255, 255, 255, 0.7);
+  --footer-bg: #111111;
+  --footer-text: #ffffff;
+  --footer-muted: rgba(255, 255, 255, 0.55);
+  --footer-line: rgba(255, 255, 255, 0.15);
   --footer-accent: #e08a6c;
-  --overlay: rgba(26, 23, 20, 0.72);
+  --overlay: rgba(17, 17, 17, 0.72);
   --ease: 0.25s ease;
   --nav-h: 72px;
 }
