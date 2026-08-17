@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found — Emmanuel Aderemi</title>
+  <meta name="robots" content="noindex">
+  <script>
+    document.documentElement.setAttribute(
+      'data-theme',
+      localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'
+    );
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231A1714' width='100' height='100'/><text x='50' y='68' text-anchor='middle' font-size='42' font-family='Georgia,serif' fill='%23F3EFE6'>EA</text></svg>">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo">Aderemi</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/#work">Work</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <div class="nav-end">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 3v1.5M12 19.5V21M4.2 4.2l1.1 1.1M18.7 18.7l1.1 1.1M3 12h1.5M19.5 12H21M4.2 19.8l1.1-1.1M18.7 5.3l1.1-1.1"/>
+        </svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="not-found">
+  <pre class="not-found-code" aria-hidden="true"><span class="k">throw</span> <span class="k">new</span> <span class="fn">Error</span>(<span class="s">'404: page not found'</span>);</pre>
+  <div class="container not-found-inner">
+    <p class="hero-kicker">Error 404</p>
+    <h1>This page<br><em>doesn’t exist.</em></h1>
+    <p class="hero-lead">The link may be broken, or the page may have moved. Head home, or jump into the work.</p>
+    <div class="hero-actions">
+      <a href="/" class="btn-primary">Go home</a>
+      <a href="/#work" class="btn-outline">View work</a>
+      <a href="/mobile" class="btn-ghost">Mobile</a>
+      <a href="/web" class="btn-ghost">Web</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer not-found-footer">
+  <div class="container footer-inner">
+    <p>Emmanuel Aderemi</p>
+    <p>© 2026</p>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
