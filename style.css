@@ -528,6 +528,23 @@ section {
   border-top: 1px solid var(--line);
 }
 
+html[data-work="web"] #work-mobile,
+html[data-work="mobile"] #work-web {
+  display: none;
+}
+
+html[data-work="web"] .work-group-title,
+html[data-work="mobile"] .work-group-title {
+  display: none;
+}
+
+html[data-work="web"] #work-web,
+html[data-work="mobile"] #work-mobile {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
 .work-group-title {
   font-family: 'Instrument Serif', Georgia, serif;
   font-size: clamp(2rem, 4vw, 2.8rem);

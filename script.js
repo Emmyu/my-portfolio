@@ -19,6 +19,24 @@ function applyTheme(theme) {
 
 applyTheme(localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
 
+(function applyWorkView() {
+  const view = document.documentElement.getAttribute('data-work') || 'all';
+  if (view === 'all') return;
+
+  const title = document.querySelector('#work .section-title');
+  const subtitle = document.querySelector('#work .section-subtitle');
+  if (title) title.textContent = 'Selected projects';
+  if (subtitle) {
+    subtitle.textContent = view === 'web'
+      ? 'Production sites shipped to users.'
+      : 'Production apps shipped to users.';
+  }
+
+  document.title = view === 'web'
+    ? 'Emmanuel Aderemi — Web Projects'
+    : 'Emmanuel Aderemi — Mobile Apps';
+})();
+
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
