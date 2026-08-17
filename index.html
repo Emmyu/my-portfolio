@@ -1,531 +1,598 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emmanuel Aderemi — Mobile &amp; Full Stack Engineer</title>
-<meta name="description" content="Building scalable mobile and web applications for fintech, healthcare, SaaS, and consumer platforms.">
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emmanuel Aderemi — Mobile &amp; Full Stack Engineer</title>
+  <meta name="description" content="Building scalable mobile and web applications for fintech, healthcare, SaaS, and consumer platforms.">
+  <script>
+    document.documentElement.setAttribute(
+      'data-theme',
+      localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'
+    );
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231A1714' width='100' height='100'/><text x='50' y='68' text-anchor='middle' font-size='42' font-family='Georgia,serif' fill='%23F3EFE6'>EA</text></svg>">
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="navbar" id="navbar">
-<div class="container nav-inner">
-<a href="#" class="nav-logo">E<span>.</span>Aderemi</a>
-<ul class="nav-links" id="nav-links">
-<li><a href="#services">Services</a></li>
-<li><a href="#projects">Work</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#contact" class="nav-cta">Contact</a></li>
-</ul>
-<button class="menu-toggle" id="menu-toggle" aria-label="Menu">
-<span></span><span></span><span></span>
-</button>
-</div>
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">Aderemi</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <div class="nav-end">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 3v1.5M12 19.5V21M4.2 4.2l1.1 1.1M18.7 18.7l1.1 1.1M3 12h1.5M19.5 12H21M4.2 19.8l1.1-1.1M18.7 5.3l1.1-1.1"/>
+        </svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="hero">
+<header class="hero" id="hero">
+  <div class="hero-code" aria-hidden="true">
+<pre class="hero-code-col hero-code-col-1"><span class="k">import</span> { useQuery } <span class="k">from</span> <span class="s">'@tanstack/react-query'</span>;
+<span class="k">import</span> { api } <span class="k">from</span> <span class="s">'@/lib/api'</span>;
 
-<!-- Floating code windows as background -->
-<div class="hero-code-bg hero-code-bg-1">
-<div class="code-window"><div class="code-header"><span class="code-dot red"></span><span class="code-dot yellow"></span><span class="code-dot green"></span><span class="code-filename">app.tsx</span></div>
-<pre class="code-body"><code>import { render } from 'react-dom';
-const App = () => (
-  &lt;Dashboard /&gt;
-);</code></pre></div>
-</div>
-<div class="hero-code-bg hero-code-bg-2">
-<div class="code-window"><div class="code-header"><span class="code-dot red"></span><span class="code-dot yellow"></span><span class="code-dot green"></span><span class="code-filename">main.dart</span></div>
-<pre class="code-body"><code>void main() {
-  runApp(MyApp());
-}</code></pre></div>
-</div>
-<div class="hero-code-bg hero-code-bg-3">
-<div class="code-window"><div class="code-header"><span class="code-dot red"></span><span class="code-dot yellow"></span><span class="code-dot green"></span><span class="code-filename">api.ts</span></div>
-<pre class="code-body"><code>export const handler =
-  async (req) => {
-  return Response;
-};</code></pre></div>
-</div>
+<span class="k">export function</span> <span class="fn">PaymentSheet</span>() {
+  <span class="k">const</span> { data } = useQuery({
+    queryKey: [<span class="s">'wallet'</span>],
+    queryFn: api.getBalance,
+  });
 
-<div class="container hero-content hero-split">
-<div class="hero-left">
-<div class="hero-badge"><span class="dot"></span> Available for opportunities</div>
-<h1>Emmanuel <span class="gradient-text">Aderemi</span></h1>
-<div class="hero-role">Software Developer</div>
-<p id="hero-tagline"></p>
-<div class="hero-actions">
-<a href="#projects" class="btn-primary">View Projects ↓</a>
-<a href="https://calendly.com/emmyunng/30min" target="_blank" class="btn-outline">📅 Book a Call</a>
-<a href="https://drive.google.com/file/d/1cMjoSkQWawI9KDZrzCaXiDaCoS0mEy21/view?usp=sharing" target="_blank" class="btn-outline">📄 View Resume</a>
-</div>
-</div>
-</div>
-</section>
+  <span class="k">return</span> (
+    &lt;<span class="fn">Checkout</span>
+      amount={data?.amount}
+      onConfirm={api.charge}
+    /&gt;
+  );
+}</pre>
+<pre class="hero-code-col hero-code-col-2"><span class="k">void</span> <span class="fn">main</span>() {
+  runApp(<span class="fn">MyApp</span>());
+}
 
-<!-- WHAT I DO -->
+<span class="k">class</span> <span class="fn">MyApp</span> <span class="k">extends</span> StatelessWidget {
+  @override
+  Widget <span class="fn">build</span>(context) {
+    <span class="k">return</span> <span class="fn">MaterialApp</span>(
+      home: <span class="fn">HomeView</span>(),
+    );
+  }
+}</pre>
+<pre class="hero-code-col hero-code-col-3"><span class="k">export const</span> handler = <span class="k">async</span> (req) => {
+  <span class="k">const</span> user = <span class="k">await</span> auth.verify(req);
+  <span class="k">return</span> Response.json({ user });
+};</pre>
+  </div>
+  <div class="container hero-inner">
+    <p class="hero-kicker">Software developer · Mobile &amp; full stack</p>
+    <h1>
+      Emmanuel
+      <em>Aderemi</em>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-lead" id="hero-tagline">I build and ship apps people actually use — across fintech, healthcare, and consumer products.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">View work</a>
+        <a href="https://calendly.com/emmyunng/30min" target="_blank" rel="noopener" class="btn-outline">Book a call</a>
+        <a href="https://drive.google.com/file/d/1cMjoSkQWawI9KDZrzCaXiDaCoS0mEy21/view?usp=sharing" target="_blank" rel="noopener" class="btn-ghost">Resume</a>
+      </div>
+    </div>
+  </div>
+</header>
+
 <section id="services">
-<div class="container">
-<div class="reveal"><span class="section-label">Services</span></div>
-<h2 class="section-title reveal">What I can do for you</h2>
-<p class="section-subtitle reveal">End-to-end development across the entire product lifecycle.</p>
-<div class="services-grid">
-<div class="service-card reveal"><div class="service-icon">📱</div><h3>Cross-Platform Mobile</h3><p>Flutter &amp; React Native apps for iOS and Android from a single codebase.</p></div>
-<div class="service-card reveal"><div class="service-icon">🌐</div><h3>Frontend Engineering</h3><p>Modern React, Next.js, and TypeScript web applications.</p></div>
-<div class="service-card reveal"><div class="service-icon">⚙️</div><h3>Full-Stack Development</h3><p>Node.js backends, REST/GraphQL APIs, and database architecture.</p></div>
-<div class="service-card reveal"><div class="service-icon">🔌</div><h3>API Integrations</h3><p>Payment gateways, third-party services, and system interconnections.</p></div>
-<div class="service-card reveal"><div class="service-icon">🏗️</div><h3>Scalable Architecture</h3><p>Clean, maintainable code designed to scale with your business.</p></div>
-<div class="service-card reveal"><div class="service-icon">🚀</div><h3>MVP &amp; Deployment</h3><p>Rapid prototyping to production with CI/CD and store deployment.</p></div>
-</div>
-</div>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-index">01</span>
+      <div>
+        <h2 class="section-title">What I work on</h2>
+        <p class="section-subtitle">End-to-end product engineering — from architecture to App Store.</p>
+      </div>
+    </div>
+    <ol class="services-list">
+      <li class="reveal">
+        <span class="service-num">01</span>
+        <div>
+          <h3>Cross-platform mobile</h3>
+          <p>Flutter and React Native apps for iOS and Android from a single codebase.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="service-num">02</span>
+        <div>
+          <h3>Frontend engineering</h3>
+          <p>React, Next.js, and TypeScript applications with a focus on speed and clarity.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="service-num">03</span>
+        <div>
+          <h3>Full-stack development</h3>
+          <p>Node.js backends, REST and GraphQL APIs, and database architecture.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="service-num">04</span>
+        <div>
+          <h3>API integrations</h3>
+          <p>Payment gateways, third-party services, and system interconnections.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="service-num">05</span>
+        <div>
+          <h3>Scalable architecture</h3>
+          <p>Clean, maintainable code designed to grow with the product.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="service-num">06</span>
+        <div>
+          <h3>MVP &amp; deployment</h3>
+          <p>Rapid prototyping to production with CI/CD and store deployment.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
 </section>
 
-<!-- SKILLS -->
+<section id="work" class="band">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-index">02</span>
+      <div>
+        <h2 class="section-title">Selected work</h2>
+        <p class="section-subtitle">Production apps and sites shipped to users.</p>
+      </div>
+    </div>
+
+    <div class="work-group" id="work-mobile">
+      <h3 class="work-group-title reveal">Mobile apps</h3>
+      <div class="projects-grid">
+
+      <article class="project-card reveal">
+        <div class="project-screenshots">
+          <img src="assets/images/sekiapp_playstore.png" alt="SekiApp Play Store" class="active">
+          <img src="assets/images/sekiapp_appstore.png" alt="SekiApp App Store">
+          <div class="screenshot-toggle"><button class="active" aria-label="Screenshot 1"></button><button aria-label="Screenshot 2"></button></div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">Fintech</span>
+          <h3>SekiApp</h3>
+          <p>Digital wallet application focused on secure transactions and modern financial accessibility.</p>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.wiseki.sekiapp" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--play" aria-hidden="true"></span> Play Store</a>
+            <a href="https://apps.apple.com/ng/app/sekiapp/id1622624126" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--apple" aria-hidden="true"></span> App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-screenshots">
+          <img src="assets/images/everydose_playstore.png" alt="EveryDose Play Store" class="active">
+          <img src="assets/images/everydose_appstore.png" alt="EveryDose App Store">
+          <div class="screenshot-toggle"><button class="active" aria-label="Screenshot 1"></button><button aria-label="Screenshot 2"></button></div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">Healthcare</span>
+          <h3>EveryDose</h3>
+          <p>Medication reminder platform helping users manage prescriptions, schedules, and treatment consistency.</p>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.groovehealthrx.groovehealth" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--play" aria-hidden="true"></span> Play Store</a>
+            <a href="https://apps.apple.com/us/app/everydose-medication-reminder/id1188929364" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--apple" aria-hidden="true"></span> App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-screenshots">
+          <img src="assets/images/mylo_playstore.png" alt="Mylo Play Store" class="active">
+          <img src="assets/images/mylo_appstore.png" alt="Mylo App Store">
+          <div class="screenshot-toggle"><button class="active" aria-label="Screenshot 1"></button><button aria-label="Screenshot 2"></button></div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">Fintech</span>
+          <h3>Mylo</h3>
+          <p>Digital credit and fintech platform focused on seamless financial experiences and scalable mobile infrastructure.</p>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.mylo.consumer" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--play" aria-hidden="true"></span> Play Store</a>
+            <a href="https://apps.apple.com/us/app/mylo-buy-now-pay-later/id6472785699" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--apple" aria-hidden="true"></span> App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-screenshots">
+          <img src="assets/images/papaymoni_playstore.png" alt="Papaymoni Play Store" class="active">
+          <img src="assets/images/papaymoni_appstore.png" alt="Papaymoni App Store">
+          <div class="screenshot-toggle"><button class="active" aria-label="Screenshot 1"></button><button aria-label="Screenshot 2"></button></div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">Fintech</span>
+          <h3>Papaymoni</h3>
+          <p>Mobile payment solution designed for fast, secure, and accessible financial transactions.</p>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.papaymoni" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--play" aria-hidden="true"></span> Play Store</a>
+            <a href="https://apps.apple.com/us/app/barsmiko-papaymoni/id6758116746" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--apple" aria-hidden="true"></span> App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-screenshots">
+          <img src="assets/images/sitata_playstore.png" alt="Sitata Play Store" class="active">
+          <img src="assets/images/sitata_appstore.png" alt="Sitata App Store">
+          <div class="screenshot-toggle"><button class="active" aria-label="Screenshot 1"></button><button aria-label="Screenshot 2"></button></div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">Travel safety</span>
+          <h3>Sitata</h3>
+          <p>Travel safety and health intelligence platform providing real-time risk alerts, trip disruption notifications, and destination safety information for travellers worldwide.</p>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.sitata.mobile.travellers" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--play" aria-hidden="true"></span> Play Store</a>
+            <a href="https://apps.apple.com/us/app/sitata-travel-safe/id963253974" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--apple" aria-hidden="true"></span> App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-screenshots">
+          <img src="assets/images/dupay_appstore.png" alt="DuPay POS App Store" class="active">
+        </div>
+        <div class="project-info">
+          <span class="project-category">Retail / POS</span>
+          <h3>DuPay POS</h3>
+          <p>iOS retail point-of-sale system for seamless in-store payment processing and business management.</p>
+          <div class="project-links">
+            <a href="https://apps.apple.com/ng/app/dupay-pos/id6479637481" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--apple" aria-hidden="true"></span> App Store</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    </div>
+
+    <div class="work-group" id="work-web">
+      <h3 class="work-group-title reveal">Web projects</h3>
+      <div class="projects-grid web-projects-grid">
+
+      <article class="project-card web-card reveal">
+        <div class="project-screenshots web-screenshot">
+          <img src="assets/images/web_niraalpina.png" alt="Nira Alpina" class="active">
+        </div>
+        <div class="project-info">
+          <span class="project-category">Hospitality</span>
+          <h3>Nira Alpina</h3>
+          <p>Swiss alpine luxury hotel website with immersive visual design and integrated reservation system.</p>
+          <div class="project-links">
+            <a href="https://www.niraalpina.com/" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--web" aria-hidden="true"></span> Visit site</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card web-card reveal">
+        <div class="project-screenshots web-screenshot">
+          <img src="assets/images/web_moooi.png" alt="Moooi" class="active">
+        </div>
+        <div class="project-info">
+          <span class="project-category">E-commerce / Luxury</span>
+          <h3>Moooi</h3>
+          <p>Premium Dutch design brand e-commerce platform showcasing luxury furniture and lighting collections.</p>
+          <div class="project-links">
+            <a href="https://www.moooi.com/en" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--web" aria-hidden="true"></span> Visit site</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card web-card reveal">
+        <div class="project-screenshots web-screenshot">
+          <img src="assets/images/web_snamitravel.png" alt="Snami Travel" class="active">
+        </div>
+        <div class="project-info">
+          <span class="project-category">Travel</span>
+          <h3>Snami Travel</h3>
+          <p>Premium travel agency website with curated destination packages and seamless booking workflows.</p>
+          <div class="project-links">
+            <a href="https://www.snamitravel.com/" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--web" aria-hidden="true"></span> Visit site</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card web-card reveal">
+        <div class="project-screenshots web-screenshot">
+          <img src="assets/images/web_casangelina.png" alt="Casa Angelina" class="active">
+        </div>
+        <div class="project-info">
+          <span class="project-category">Hospitality</span>
+          <h3>Casa Angelina</h3>
+          <p>Luxury boutique hotel website on the Amalfi Coast featuring elegant booking experience and visual storytelling.</p>
+          <div class="project-links">
+            <a href="https://www.casangelina.com/" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--web" aria-hidden="true"></span> Visit site</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card web-card reveal">
+        <div class="project-screenshots web-screenshot">
+          <img src="assets/images/web_minddoc.png" alt="MindDoc" class="active">
+        </div>
+        <div class="project-info">
+          <span class="project-category">Mental health</span>
+          <h3>MindDoc</h3>
+          <p>Digital mental health platform providing mood tracking, therapy resources, and professional support tools.</p>
+          <div class="project-links">
+            <a href="https://minddoc.com/us/en" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--web" aria-hidden="true"></span> Visit site</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card web-card reveal">
+        <div class="project-screenshots web-screenshot">
+          <img src="assets/images/web_aspirehr.png" alt="Aspire HR" class="active">
+        </div>
+        <div class="project-info">
+          <span class="project-category">HR / SaaS</span>
+          <h3>Aspire HR</h3>
+          <p>Human resources management platform streamlining recruitment, onboarding, and employee engagement.</p>
+          <div class="project-links">
+            <a href="https://aspire-hr.com/" target="_blank" rel="noopener" class="store-badge"><span class="store-icon store-icon--web" aria-hidden="true"></span> Visit site</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    </div>
+  </div>
+</section>
+
 <section id="skills">
-<div class="container">
-<div class="reveal"><span class="section-label">Tech Stack</span></div>
-<h2 class="section-title reveal">Skills &amp; Technologies</h2>
-<p class="section-subtitle reveal">A versatile toolkit for building modern applications.</p>
-<div class="skill-tags reveal" style="max-width:900px;">
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="" class="skill-icon">Flutter</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" class="skill-icon">React Native</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" class="skill-icon">React</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" class="skill-icon" style="filter:invert(1)">Next.js</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" class="skill-icon">TypeScript</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" class="skill-icon">JavaScript</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" class="skill-icon">Node.js</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" class="skill-icon" style="filter:invert(1)">Express</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="" class="skill-icon">Firebase</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="" class="skill-icon">GraphQL</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="" class="skill-icon">Kotlin</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="" class="skill-icon">Swift</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="" class="skill-icon">Dart</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" class="skill-icon">PostgreSQL</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="" class="skill-icon">MongoDB</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" class="skill-icon" style="filter:invert(1)">AWS</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="" class="skill-icon">Tailwind</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="" class="skill-icon">Redux</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" class="skill-icon">Git</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" class="skill-icon">Docker</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="" class="skill-icon">Figma</span>
-<span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="" class="skill-icon">Supabase</span>
-</div>
-</div>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-index">03</span>
+      <div>
+        <h2 class="section-title">Tools I use</h2>
+        <p class="section-subtitle">A practical stack for shipping modern mobile and web products.</p>
+      </div>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-group reveal">
+        <h3>Mobile</h3>
+        <ul>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="">Flutter</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="">React Native</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="">Dart</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="">Kotlin</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="">Swift</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Web</h3>
+        <ul>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="">React</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="">Next.js</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="">TypeScript</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="">JavaScript</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="">Tailwind</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="">Redux</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Backend</h3>
+        <ul>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="">Node.js</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="">Express</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="">GraphQL</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="">Firebase</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="">PostgreSQL</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="">MongoDB</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="">Supabase</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Infrastructure</h3>
+        <ul>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="">AWS</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="">Git</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="">Docker</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="">Figma</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-<div class="container">
-<div class="reveal"><span class="section-label">Featured Work</span></div>
-<h2 class="section-title reveal">Production Applications</h2>
-<p class="section-subtitle reveal">Real-world apps and websites shipped to users worldwide.</p>
-
-<!-- Tab toggles -->
-<div class="project-tabs reveal">
-<button class="project-tab active" data-tab="mobile">📱 Mobile Apps</button>
-<button class="project-tab" data-tab="web">🌐 Web Projects</button>
-</div>
-
-<!-- MOBILE PROJECTS -->
-<div class="projects-grid project-panel active" id="panel-mobile">
-
-<div class="project-card reveal">
-<div class="project-screenshots">
-<img src="assets/images/sitata_playstore.png" alt="Sitata Play Store" class="active">
-<img src="assets/images/sitata_appstore.png" alt="Sitata App Store">
-<div class="screenshot-toggle"><button class="active"></button><button></button></div>
-</div>
-<div class="project-info">
-<span class="project-category">Travel Safety</span>
-<h3>Sitata</h3>
-<p>Travel safety and health intelligence platform providing real-time risk alerts, trip disruption notifications, and destination safety information for travellers worldwide.</p>
-<div class="project-links">
-<a href="https://play.google.com/store/apps/details?id=com.sitata.mobile.travellers" target="_blank" class="store-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg> Play Store</a>
-<a href="https://apps.apple.com/us/app/sitata-travel-safe/id963253974" target="_blank" class="store-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,16.56 2.94,11.3 4.7,7.97C5.57,6.32 7.27,5.26 9.11,5.24C10.39,5.22 11.6,6.12 12.37,6.12C13.14,6.12 14.6,5.03 16.13,5.2C16.78,5.22 18.68,5.47 19.88,7.28C19.77,7.35 17.37,8.76 17.4,11.66C17.42,15.12 20.37,16.27 20.4,16.28C20.37,16.35 19.92,17.93 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/></svg> App Store</a>
-</div>
-</div>
-</div>
-
-<div class="project-card reveal">
-<div class="project-screenshots">
-<img src="assets/images/everydose_playstore.png" alt="EveryDose Play Store" class="active">
-<img src="assets/images/everydose_appstore.png" alt="EveryDose App Store">
-<div class="screenshot-toggle"><button class="active"></button><button></button></div>
-</div>
-<div class="project-info">
-<span class="project-category">Healthcare</span>
-<h3>EveryDose</h3>
-<p>Medication reminder platform helping users manage prescriptions, schedules, and treatment consistency.</p>
-<div class="project-links">
-<a href="https://play.google.com/store/apps/details?id=com.groovehealthrx.groovehealth" target="_blank" class="store-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg> Play Store</a>
-<a href="https://apps.apple.com/us/app/everydose-medication-reminder/id1188929364" target="_blank" class="store-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,16.56 2.94,11.3 4.7,7.97C5.57,6.32 7.27,5.26 9.11,5.24C10.39,5.22 11.6,6.12 12.37,6.12C13.14,6.12 14.6,5.03 16.13,5.2C16.78,5.22 18.68,5.47 19.88,7.28C19.77,7.35 17.37,8.76 17.4,11.66C17.42,15.12 20.37,16.27 20.4,16.28C20.37,16.35 19.92,17.93 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/></svg> App Store</a>
-</div>
-</div>
-</div>
-
-<div class="project-card reveal">
-<div class="project-screenshots">
-<img src="assets/images/mylo_playstore.png" alt="Mylo Play Store" class="active">
-<img src="assets/images/mylo_appstore.png" alt="Mylo App Store">
-<div class="screenshot-toggle"><button class="active"></button><button></button></div>
-</div>
-<div class="project-info">
-<span class="project-category">Fintech</span>
-<h3>Mylo</h3>
-<p>Digital credit and fintech platform focused on seamless financial experiences and scalable mobile infrastructure.</p>
-<div class="project-links">
-<a href="https://play.google.com/store/apps/details?id=com.mylo.consumer" target="_blank" class="store-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg> Play Store</a>
-<a href="https://apps.apple.com/us/app/mylo-buy-now-pay-later/id6472785699" target="_blank" class="store-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,16.56 2.94,11.3 4.7,7.97C5.57,6.32 7.27,5.26 9.11,5.24C10.39,5.22 11.6,6.12 12.37,6.12C13.14,6.12 14.6,5.03 16.13,5.2C16.78,5.22 18.68,5.47 19.88,7.28C19.77,7.35 17.37,8.76 17.4,11.66C17.42,15.12 20.37,16.27 20.4,16.28C20.37,16.35 19.92,17.93 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/></svg> App Store</a>
-</div>
-</div>
-</div>
-
-<div class="project-card reveal">
-<div class="project-screenshots">
-<img src="assets/images/papaymoni_playstore.png" alt="Papaymoni Play Store" class="active">
-<img src="assets/images/papaymoni_appstore.png" alt="Papaymoni App Store">
-<div class="screenshot-toggle"><button class="active"></button><button></button></div>
-</div>
-<div class="project-info">
-<span class="project-category">Fintech</span>
-<h3>Papaymoni</h3>
-<p>Mobile payment solution designed for fast, secure, and accessible financial transactions.</p>
-<div class="project-links">
-<a href="https://play.google.com/store/apps/details?id=com.papaymoni" target="_blank" class="store-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg> Play Store</a>
-<a href="https://apps.apple.com/us/app/barsmiko-papaymoni/id6758116746" target="_blank" class="store-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,16.56 2.94,11.3 4.7,7.97C5.57,6.32 7.27,5.26 9.11,5.24C10.39,5.22 11.6,6.12 12.37,6.12C13.14,6.12 14.6,5.03 16.13,5.2C16.78,5.22 18.68,5.47 19.88,7.28C19.77,7.35 17.37,8.76 17.4,11.66C17.42,15.12 20.37,16.27 20.4,16.28C20.37,16.35 19.92,17.93 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/></svg> App Store</a>
-</div>
-</div>
-</div>
-
-<div class="project-card reveal">
-<div class="project-screenshots">
-<img src="assets/images/sekiapp_playstore.png" alt="SekiApp Play Store" class="active">
-<img src="assets/images/sekiapp_appstore.png" alt="SekiApp App Store">
-<div class="screenshot-toggle"><button class="active"></button><button></button></div>
-</div>
-<div class="project-info">
-<span class="project-category">Fintech</span>
-<h3>SekiApp</h3>
-<p>Digital wallet application focused on secure transactions and modern financial accessibility.</p>
-<div class="project-links">
-<a href="https://play.google.com/store/apps/details?id=com.wiseki.sekiapp" target="_blank" class="store-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg> Play Store</a>
-<a href="https://apps.apple.com/ng/app/sekiapp/id1622624126" target="_blank" class="store-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,16.56 2.94,11.3 4.7,7.97C5.57,6.32 7.27,5.26 9.11,5.24C10.39,5.22 11.6,6.12 12.37,6.12C13.14,6.12 14.6,5.03 16.13,5.2C16.78,5.22 18.68,5.47 19.88,7.28C19.77,7.35 17.37,8.76 17.4,11.66C17.42,15.12 20.37,16.27 20.4,16.28C20.37,16.35 19.92,17.93 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/></svg> App Store</a>
-</div>
-</div>
-</div>
-
-<div class="project-card reveal">
-<div class="project-screenshots">
-<img src="assets/images/dupay_appstore.png" alt="DuPay POS App Store" class="active">
-<div class="screenshot-toggle"><button class="active"></button></div>
-</div>
-<div class="project-info">
-<span class="project-category">Retail / POS</span>
-<h3>DuPay POS</h3>
-<p>iOS retail point-of-sale system for seamless in-store payment processing and business management.</p>
-<div class="project-links">
-<a href="https://apps.apple.com/ng/app/dupay-pos/id6479637481" target="_blank" class="store-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,16.56 2.94,11.3 4.7,7.97C5.57,6.32 7.27,5.26 9.11,5.24C10.39,5.22 11.6,6.12 12.37,6.12C13.14,6.12 14.6,5.03 16.13,5.2C16.78,5.22 18.68,5.47 19.88,7.28C19.77,7.35 17.37,8.76 17.4,11.66C17.42,15.12 20.37,16.27 20.4,16.28C20.37,16.35 19.92,17.93 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/></svg> App Store</a>
-</div>
-</div>
-</div>
-
-</div>
-
-<!-- WEB PROJECTS -->
-<div class="projects-grid web-projects-grid project-panel" id="panel-web">
-
-<div class="project-card web-card reveal">
-<div class="project-screenshots web-screenshot">
-<img src="assets/images/web_niraalpina.png" alt="Nira Alpina" class="active">
-</div>
-<div class="project-info">
-<span class="project-category">Hospitality</span>
-<h3>Nira Alpina</h3>
-<p>Swiss alpine luxury hotel website with immersive visual design and integrated reservation system.</p>
-<div class="project-links">
-<a href="https://www.niraalpina.com/" target="_blank" class="store-badge">🌐 Visit Site</a>
-</div>
-</div>
-</div>
-
-<div class="project-card web-card reveal">
-<div class="project-screenshots web-screenshot">
-<img src="assets/images/web_moooi.png" alt="Moooi" class="active">
-</div>
-<div class="project-info">
-<span class="project-category">E-Commerce / Luxury</span>
-<h3>Moooi</h3>
-<p>Premium Dutch design brand e-commerce platform showcasing luxury furniture and lighting collections.</p>
-<div class="project-links">
-<a href="https://www.moooi.com/en" target="_blank" class="store-badge">🌐 Visit Site</a>
-</div>
-</div>
-</div>
-
-<div class="project-card web-card reveal">
-<div class="project-screenshots web-screenshot">
-<img src="assets/images/web_snamitravel.png" alt="Snami Travel" class="active">
-</div>
-<div class="project-info">
-<span class="project-category">Travel</span>
-<h3>Snami Travel</h3>
-<p>Premium travel agency website with curated destination packages and seamless booking workflows.</p>
-<div class="project-links">
-<a href="https://www.snamitravel.com/" target="_blank" class="store-badge">🌐 Visit Site</a>
-</div>
-</div>
-</div>
-
-<div class="project-card web-card reveal">
-<div class="project-screenshots web-screenshot">
-<img src="assets/images/web_casangelina.png" alt="Casa Angelina" class="active">
-</div>
-<div class="project-info">
-<span class="project-category">Hospitality</span>
-<h3>Casa Angelina</h3>
-<p>Luxury boutique hotel website on the Amalfi Coast featuring elegant booking experience and visual storytelling.</p>
-<div class="project-links">
-<a href="https://www.casangelina.com/" target="_blank" class="store-badge">🌐 Visit Site</a>
-</div>
-</div>
-</div>
-
-<div class="project-card web-card reveal">
-<div class="project-screenshots web-screenshot">
-<img src="assets/images/web_minddoc.png" alt="MindDoc" class="active">
-</div>
-<div class="project-info">
-<span class="project-category">Mental Health</span>
-<h3>MindDoc</h3>
-<p>Digital mental health platform providing mood tracking, therapy resources, and professional support tools.</p>
-<div class="project-links">
-<a href="https://minddoc.com/us/en" target="_blank" class="store-badge">🌐 Visit Site</a>
-</div>
-</div>
-</div>
-
-<div class="project-card web-card reveal">
-<div class="project-screenshots web-screenshot">
-<img src="assets/images/web_aspirehr.png" alt="Aspire HR" class="active">
-</div>
-<div class="project-info">
-<span class="project-category">HR / SaaS</span>
-<h3>Aspire HR</h3>
-<p>Human resources management platform streamlining recruitment, onboarding, and employee engagement.</p>
-<div class="project-links">
-<a href="https://aspire-hr.com/" target="_blank" class="store-badge">🌐 Visit Site</a>
-</div>
-</div>
-</div>
-
-</div>
-
-</div>
+<section id="experience" class="band">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-index">04</span>
+      <div>
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">Six years building across fintech, payments, and consumer products.</p>
+      </div>
+    </div>
+    <div class="exp-list">
+      <article class="exp-item reveal">
+        <h3>Lead Software Developer</h3>
+        <p class="exp-company">Barsmiko Inc</p>
+        <p class="exp-date">Jul 2025 – Present</p>
+      </article>
+      <article class="exp-item reveal">
+        <h3>Senior Software Developer</h3>
+        <p class="exp-company">Mylo · Dubai, UAE</p>
+        <p class="exp-date">Feb 2024 – Jul 2024</p>
+      </article>
+      <article class="exp-item reveal">
+        <h3>Software Developer</h3>
+        <p class="exp-company">Maringo · London, UK</p>
+        <p class="exp-date">Aug 2023 – Dec 2023</p>
+      </article>
+      <article class="exp-item reveal">
+        <h3>CTO / Lead Developer</h3>
+        <p class="exp-company">Transmoni</p>
+        <p class="exp-date">Feb 2022 – Aug 2023</p>
+      </article>
+      <article class="exp-item reveal">
+        <h3>Software Developer</h3>
+        <p class="exp-company">Mela · Ontario, Canada</p>
+        <p class="exp-date">Sep 2019 – Oct 2022</p>
+      </article>
+    </div>
+  </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-<div class="container">
-<div class="reveal"><span class="section-label">Experience</span></div>
-<h2 class="section-title reveal">Where I've worked</h2>
-<p class="section-subtitle reveal">6+ years building across fintech, payments, and consumer products.</p>
-<div class="timeline">
-<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content">
-<div class="timeline-role">Lead Software Developer</div>
-<div class="timeline-company">Barsmiko Inc</div>
-<div class="timeline-date">Jul 2025 – Present</div>
-<ul class="timeline-details">
-<li>Designed a customer-facing fintech platform serving 1,000+ active users with React, Next.js, React Native</li>
-<li>Achieved 40% reduction in load times through lazy loading, code splitting, and bundle optimisation</li>
-<li>Set up CI/CD pipelines with GitHub Actions automating testing, builds, and deployments</li>
-</ul>
-</div></div>
-<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content">
-<div class="timeline-role">Senior Software Developer</div>
-<div class="timeline-company">Mylo · Dubai, UAE (Remote)</div>
-<div class="timeline-date">Feb 2024 – Jul 2024</div>
-<ul class="timeline-details">
-<li>Built and shipped two production apps — Celebut and Waya Credit — with 5,000+ combined downloads</li>
-<li>Integrated AWS serverless infrastructure (Lambda, API Gateway, S3) for scalable backend</li>
-<li>Increased user engagement by 65% through targeted push notification flows</li>
-</ul>
-</div></div>
-<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content">
-<div class="timeline-role">Software Developer</div>
-<div class="timeline-company">Maringo · London, UK (Remote)</div>
-<div class="timeline-date">Aug 2023 – Dec 2023</div>
-<ul class="timeline-details">
-<li>Built modern web applications using React, Vue.js, and TypeScript for a Web3 social platform</li>
-<li>Developed a React Native mobile app integrated with Node.js APIs and blockchain services</li>
-</ul>
-</div></div>
-<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content">
-<div class="timeline-role">CTO / Lead Developer</div>
-<div class="timeline-company">Transmoni</div>
-<div class="timeline-date">Feb 2022 – Aug 2023</div>
-<ul class="timeline-details">
-<li>Led end-to-end development of a fintech transport platform with 10,000+ users</li>
-<li>Built secure payment processing with Paystack, Flutterwave, digital wallets, and KYC/AML compliance</li>
-<li>Architected scalable AWS infrastructure (Lambda, DynamoDB, API Gateway)</li>
-</ul>
-</div></div>
-<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content">
-<div class="timeline-role">React Native Developer</div>
-<div class="timeline-company">Mela · Ontario, Canada (Remote)</div>
-<div class="timeline-date">Sep 2019 – Oct 2022</div>
-<ul class="timeline-details">
-<li>Enhanced UI and performance for iOS and Android applications</li>
-<li>Developed reusable components and optimised app performance across platforms</li>
-</ul>
-</div></div>
-</div>
-</div>
-</section>
-<!-- ABOUT -->
 <section id="about">
-<div class="container">
-<div class="reveal"><span class="section-label">About Me</span></div>
-<div class="about-grid">
-<div class="about-text reveal">
-<h2 class="section-title">Engineering products<br>that deliver value</h2>
-<p>I'm a software engineer focused on building scalable, high-performance mobile and web applications with strong attention to user experience, maintainability, and clean architecture.</p>
-<p>I've contributed to production applications across fintech, healthcare, SaaS, logistics, and consumer products using Flutter, React Native, React, TypeScript, Node.js, Firebase, and modern frontend ecosystems.</p>
-<p>I thrive in startup and fast-moving environments where ownership, speed, and product thinking matter.</p>
-</div>
-<div class="about-stats reveal">
-<div class="stat-card"><span class="stat-number" data-count="6+">0+</span><span class="stat-label">Production Apps</span></div>
-<div class="stat-card"><span class="stat-number" data-count="5+">0+</span><span class="stat-label">Industries</span></div>
-<div class="stat-card"><span class="stat-number" data-count="10+">0+</span><span class="stat-label">Technologies</span></div>
-<div class="stat-card"><span class="stat-number" data-count="6+">0+</span><span class="stat-label">Years Experience</span></div>
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-index">05</span>
+      <div>
+        <h2 class="section-title">About</h2>
+      </div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="about-lede">I engineer products that hold up in production — not just in a demo.</p>
+        <p>I'm a software engineer focused on building scalable, high-performance mobile and web applications with strong attention to user experience, maintainability, and clean architecture.</p>
+        <p>I've contributed to production applications across fintech, healthcare, SaaS, logistics, and consumer products using Flutter, React Native, React, TypeScript, Node.js, Firebase, and modern frontend ecosystems.</p>
+        <p>I work best in startup and fast-moving environments where ownership, speed, and product thinking matter.</p>
+      </div>
+      <div class="about-stats reveal">
+        <div class="stat-card"><span class="stat-number" data-count="6+">0+</span><span class="stat-label">Production apps</span></div>
+        <div class="stat-card"><span class="stat-number" data-count="5+">0+</span><span class="stat-label">Industries</span></div>
+        <div class="stat-card"><span class="stat-number" data-count="10+">0+</span><span class="stat-label">Technologies</span></div>
+        <div class="stat-card"><span class="stat-number" data-count="6+">0+</span><span class="stat-label">Years experience</span></div>
+      </div>
+    </div>
+
+    <div class="strengths-block">
+      <h3 class="reveal">How I work</h3>
+      <ul class="strengths-grid">
+        <li class="reveal">Product ownership</li>
+        <li class="reveal">Fast learner</li>
+        <li class="reveal">Scalable thinking</li>
+        <li class="reveal">User-focused engineering</li>
+        <li class="reveal">Performance-driven</li>
+        <li class="reveal">Clean architecture</li>
+        <li class="reveal">Startup adaptability</li>
+        <li class="reveal">Cross-functional collaboration</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-
-<!-- STRENGTHS -->
-<section id="strengths">
-<div class="container">
-<div class="reveal"><span class="section-label">Strengths</span></div>
-<h2 class="section-title reveal">What sets me apart</h2>
-<p class="section-subtitle reveal">Core qualities I bring to every project.</p>
-<div class="strengths-grid">
-<div class="strength-item reveal"><span class="strength-icon">🎯</span> Strong product ownership</div>
-<div class="strength-item reveal"><span class="strength-icon">⚡</span> Fast learner</div>
-<div class="strength-item reveal"><span class="strength-icon">📈</span> Scalable thinking</div>
-<div class="strength-item reveal"><span class="strength-icon">👤</span> User-focused engineering</div>
-<div class="strength-item reveal"><span class="strength-icon">🚀</span> Performance-driven</div>
-<div class="strength-item reveal"><span class="strength-icon">🏗️</span> Clean architecture</div>
-<div class="strength-item reveal"><span class="strength-icon">🔄</span> Startup adaptability</div>
-<div class="strength-item reveal"><span class="strength-icon">🤝</span> Cross-functional collaboration</div>
-</div>
-</div>
-</section>
-
-<!-- CONTACT -->
 <section id="contact" class="contact-section">
-<div class="container">
-<div class="contact-grid">
-<div class="contact-info reveal">
-<span class="section-label">Get in Touch</span>
-<h2>Let's build something<br>impactful.</h2>
-</div>
-<div class="contact-links reveal">
-<a href="mailto:aderemiemmy204@gmail.com" class="contact-link">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22,4L12,13L2,4"/></svg>
-<div><div class="contact-link-label">Email</div>aderemiemmy204@gmail.com</div>
-</a>
-<a href="https://www.linkedin.com/in/emmanuel-aderemi-566260205/" target="_blank" class="contact-link">
-<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg>
-<div><div class="contact-link-label">LinkedIn</div>Connect on LinkedIn</div>
-</a>
-<a href="https://calendly.com/emmyunng/30min" target="_blank" class="contact-link">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-<div><div class="contact-link-label">Calendly</div>Schedule a call</div>
-</a>
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="section-index">06</span>
+        <h2>Let’s talk.</h2>
+        <p>Open to roles, freelance, and product collaborations.</p>
+      </div>
+      <div class="contact-links reveal">
+        <a href="mailto:aderemiemmy204@gmail.com" class="contact-link">
+          <span class="contact-link-label">Email</span>
+          <span>aderemiemmy204@gmail.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/emmanuel-aderemi-566260205/" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-label">LinkedIn</span>
+          <span>Emmanuel Aderemi</span>
+        </a>
+        <a href="https://calendly.com/emmyunng/30min" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-label">Calendly</span>
+          <span>Schedule a call</span>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
-<div class="container">
-<p>Emmanuel Aderemi. Built with purpose.</p>
-</div>
+  <div class="container footer-inner">
+    <p>Emmanuel Aderemi</p>
+    <p>© 2026</p>
+  </div>
 </footer>
 
-<!-- RESUME MODAL -->
 <div class="resume-modal" id="resume-modal" onclick="if(event.target===this)this.style.display='none'">
-<div class="resume-modal-content">
-<button class="resume-close" onclick="document.getElementById('resume-modal').style.display='none'">✕</button>
-<h2 class="section-title" style="margin-bottom:8px;">Emmanuel Aderemi</h2>
-<p style="color:var(--text-secondary);margin-bottom:24px;">Software Developer · 6+ years · Web &amp; Mobile</p>
+  <div class="resume-modal-content">
+    <button class="resume-close" onclick="document.getElementById('resume-modal').style.display='none'" aria-label="Close">×</button>
+    <h2 class="section-title" style="margin-bottom:8px;">Emmanuel Aderemi</h2>
+    <p style="color:var(--muted);margin-bottom:24px;">Software Developer · 6+ years · Web &amp; Mobile</p>
 
-<div class="resume-section">
-<h3>Professional Experience</h3>
+    <div class="resume-section">
+      <h3>Professional Experience</h3>
 
-<div class="resume-role">
-<h4>Lead Software Developer (Web + Mobile)</h4>
-<div class="resume-company">Barsmiko Inc · Jul 2025 – Present</div>
-<ul>
-<li>Designed a customer-facing fintech platform serving 1,000+ active users with React, Next.js, React Native, and TypeScript</li>
-<li>Achieved 40% reduction in load times through lazy loading, code splitting, and bundle optimisation</li>
-<li>Set up CI/CD pipelines with GitHub Actions automating testing, builds, and deployments</li>
-<li>Established test automation framework with Jest and Detox achieving 80%+ code coverage</li>
-</ul>
-</div>
+      <div class="resume-role">
+        <h4>Lead Software Developer (Web + Mobile)</h4>
+        <div class="resume-company">Barsmiko Inc · Jul 2025 – Present</div>
+        <ul>
+          <li>Designed a customer-facing fintech platform serving 1,000+ active users with React, Next.js, React Native, and TypeScript</li>
+          <li>Achieved 40% reduction in load times through lazy loading, code splitting, and bundle optimisation</li>
+          <li>Set up CI/CD pipelines with GitHub Actions automating testing, builds, and deployments</li>
+          <li>Established test automation framework with Jest and Detox achieving 80%+ code coverage</li>
+        </ul>
+      </div>
 
-<div class="resume-role">
-<h4>Senior Software Developer</h4>
-<div class="resume-company">Mylo · Feb 2024 – Jul 2024 · Dubai, UAE (Remote)</div>
-<ul>
-<li>Built and shipped two production apps — Celebut and Waya Credit — with 5,000+ combined downloads</li>
-<li>Integrated AWS serverless infrastructure (Lambda, API Gateway, S3) for scalable backend services</li>
-<li>Increased user engagement by 65% through targeted push notification flows</li>
-</ul>
-</div>
+      <div class="resume-role">
+        <h4>Senior Software Developer</h4>
+        <div class="resume-company">Mylo · Feb 2024 – Jul 2024 · Dubai, UAE (Remote)</div>
+        <ul>
+          <li>Built and shipped two production apps — Celebut and Waya Credit — with 5,000+ combined downloads</li>
+          <li>Integrated AWS serverless infrastructure (Lambda, API Gateway, S3) for scalable backend services</li>
+          <li>Increased user engagement by 65% through targeted push notification flows</li>
+        </ul>
+      </div>
 
-<div class="resume-role">
-<h4>Software Developer</h4>
-<div class="resume-company">Maringo · Aug 2023 – Dec 2023 · London, UK (Remote)</div>
-<ul>
-<li>Built modern web applications using React, Vue.js, and TypeScript for a Web3 social platform</li>
-<li>Developed a React Native mobile app integrated with Node.js APIs and blockchain services</li>
-</ul>
-</div>
+      <div class="resume-role">
+        <h4>Software Developer</h4>
+        <div class="resume-company">Maringo · Aug 2023 – Dec 2023 · London, UK (Remote)</div>
+        <ul>
+          <li>Built modern web applications using React, Vue.js, and TypeScript for a Web3 social platform</li>
+          <li>Developed a React Native mobile app integrated with Node.js APIs and blockchain services</li>
+        </ul>
+      </div>
 
-<div class="resume-role">
-<h4>CTO / Lead Developer</h4>
-<div class="resume-company">Transmoni · Feb 2022 – Aug 2023</div>
-<ul>
-<li>Led end-to-end development of a fintech transport platform with 10,000+ users</li>
-<li>Built secure payment processing with Paystack, Flutterwave, digital wallets, and KYC/AML compliance</li>
-<li>Architected scalable AWS infrastructure (Lambda, DynamoDB, API Gateway)</li>
-</ul>
-</div>
+      <div class="resume-role">
+        <h4>CTO / Lead Developer</h4>
+        <div class="resume-company">Transmoni · Feb 2022 – Aug 2023</div>
+        <ul>
+          <li>Led end-to-end development of a fintech transport platform with 10,000+ users</li>
+          <li>Built secure payment processing with Paystack, Flutterwave, digital wallets, and KYC/AML compliance</li>
+          <li>Architected scalable AWS infrastructure (Lambda, DynamoDB, API Gateway)</li>
+        </ul>
+      </div>
 
-<div class="resume-role">
-<h4>React Native Developer</h4>
-<div class="resume-company">Mela · Sep 2019 – Oct 2022 · Ontario, Canada (Remote)</div>
-<ul>
-<li>Enhanced UI and performance for iOS and Android applications</li>
-<li>Developed reusable components and optimised app performance across platforms</li>
-</ul>
-</div>
-</div>
+      <div class="resume-role">
+        <h4>Software Developer</h4>
+        <div class="resume-company">Mela · Sep 2019 – Oct 2022 · Ontario, Canada (Remote)</div>
+        <ul>
+          <li>Enhanced UI and performance for iOS and Android applications</li>
+          <li>Developed reusable components and optimised app performance across platforms</li>
+        </ul>
+      </div>
+    </div>
 
-<div class="resume-section">
-<h3>Core Skills</h3>
-<div class="skill-tags" style="margin-top:8px;">
-<span class="skill-tag">React</span><span class="skill-tag">Next.js</span><span class="skill-tag">React Native</span><span class="skill-tag">Flutter</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Node.js</span><span class="skill-tag">AWS</span><span class="skill-tag">Firebase</span><span class="skill-tag">GraphQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">CI/CD</span><span class="skill-tag">Docker</span>
-</div>
-</div>
-</div>
+    <div class="resume-section">
+      <h3>Core Skills</h3>
+      <p class="resume-skills">React · Next.js · React Native · Flutter · TypeScript · Node.js · AWS · Firebase · GraphQL · PostgreSQL · CI/CD · Docker</p>
+    </div>
+  </div>
 </div>
 
 <script src="script.js"></script>
