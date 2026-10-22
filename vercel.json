@@ -1,8 +1,92 @@
 {
   "rewrites": [
-    { "source": "/web", "destination": "/index.html" },
-    { "source": "/web/", "destination": "/index.html" },
-    { "source": "/mobile", "destination": "/index.html" },
-    { "source": "/mobile/", "destination": "/index.html" }
+    {
+      "source": "/mobile",
+      "destination": "/mobile.html"
+    },
+    {
+      "source": "/mobile/",
+      "destination": "/mobile.html"
+    },
+    {
+      "source": "/web",
+      "destination": "/web.html"
+    },
+    {
+      "source": "/web/",
+      "destination": "/web.html"
+    },
+    {
+      "source": "/fintech",
+      "destination": "/fintech.html"
+    },
+    {
+      "source": "/fintech/",
+      "destination": "/fintech.html"
+    },
+    {
+      "source": "/healthtech",
+      "destination": "/healthtech.html"
+    },
+    {
+      "source": "/healthtech/",
+      "destination": "/healthtech.html"
+    },
+    {
+      "source": "/startup",
+      "destination": "/startup.html"
+    },
+    {
+      "source": "/startup/",
+      "destination": "/startup.html"
+    },
+    {
+      "source": "/backend",
+      "destination": "/backend.html"
+    },
+    {
+      "source": "/backend/",
+      "destination": "/backend.html"
+    },
+    {
+      "source": "/maintenance",
+      "destination": "/maintenance.html"
+    },
+    {
+      "source": "/maintenance/",
+      "destination": "/maintenance.html"
+    },
+    {
+      "source": "/nigeria",
+      "destination": "/nigeria.html"
+    },
+    {
+      "source": "/nigeria/",
+      "destination": "/nigeria.html"
+    },
+    {
+      "source": "/uk",
+      "destination": "/uk.html"
+    },
+    {
+      "source": "/uk/",
+      "destination": "/uk.html"
+    },
+    {
+      "source": "/us",
+      "destination": "/us.html"
+    },
+    {
+      "source": "/us/",
+      "destination": "/us.html"
+    },
+    {
+      "source": "/europe",
+      "destination": "/europe.html"
+    },
+    {
+      "source": "/europe/",
+      "destination": "/europe.html"
+    }
   ]
 }

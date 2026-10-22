@@ -38,9 +38,10 @@ const server = http.createServer((req, res) => {
     pathname = pathname.slice(0, -1);
   }
 
-  // Handle SPA / vercel rewrites for /web and /mobile
-  if (pathname === '/web' || pathname === '/mobile') {
-    pathname = '/index.html';
+  // Mirror the vercel.json rewrites: /name serves /name.html for the landing pages
+  const LANDING_PAGES = ['mobile', 'web', 'fintech', 'healthtech', 'startup', 'backend', 'maintenance', 'nigeria', 'uk', 'us', 'europe'];
+  if (LANDING_PAGES.includes(pathname.slice(1))) {
+    pathname += '.html';
   }
 
   // Map to local file path

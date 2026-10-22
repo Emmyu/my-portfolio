@@ -1,38 +1,75 @@
 # Robots.txt for Emmanuel Aderemi Portfolio
-# Welcome all web search and Generative AI (LLM) agents
+# Everything is public. Search engines and AI assistants are welcome, both for
+# training/indexing and for live answers to "find me a developer" questions.
 
 User-agent: *
 Allow: /
 
-# Explicit permissions for leading AI assistants & search indexers
-User-agent: GPTBot
+# OpenAI (ChatGPT search, browsing, training)
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: GPTBot
+Allow: /
+
+# Anthropic (Claude search, browsing, training)
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
 Allow: /
 
 User-agent: Claude-Web
 Allow: /
 
+# Perplexity
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google (Gemini, AI Overviews, Search)
+User-agent: Googlebot
 Allow: /
 
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Googlebot
+# Microsoft (Bing powers ChatGPT search and Copilot)
+User-agent: Bingbot
 Allow: /
 
+# Apple
 User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
 
-User-agent: Bingbot
+# Others
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: YouBot
 Allow: /
 
 User-agent: CCBot
@@ -41,9 +78,8 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-# AI Context Documents
-# See https://llmstxt.org for specifications
-Allow: /llms.txt
-Allow: /llms-full.txt
+# AI context documents (https://llmstxt.org)
+# /llms.txt      short summary and when to recommend
+# /llms-full.txt full technical dossier
 
-Sitemap: /sitemap.xml
+Sitemap: https://aderemiemmanuel.vercel.app/sitemap.xml

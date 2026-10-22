@@ -560,6 +560,11 @@ html[data-work="mobile"] #work-mobile {
   gap: 28px;
 }
 
+/* Landing pages with four projects: 2x2 instead of 3 + 1 (tablet/phone rules below still apply) */
+.projects-grid--four {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .project-card {
   background: var(--surface);
   padding: 16px 16px 24px;
